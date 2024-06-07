@@ -1,0 +1,49 @@
+@import "variables";
+@import "button";
+@import "functions";
+
+
+.button{
+@include btn($button-color, $button-text-color);
+}
+
+// Define the default button color using the btn-default function
+$default-button-color: btn-default($button-color-function); 
+
+.button-function {
+    background-color: $default-button-color;
+}
+
+@each $key, $value in $colors {
+  .color-#{$key} {
+    color: $value;
+  }
+
+  @if ($value != black and $value != white) {
+    @for $i from 1 through 9 {
+      .color-dark-#{$key}-#{$i} {
+        background-color: mix(black, $value, $i * 10%);
+        // Example: Apply a border if $i is greater than 5
+        @if ($i > 3) {
+          border: 2px dotted black;
+        }
+        .text-hover-#{$key}-#{$i} {
+            &:hover{
+                background-color: blueviolet;
+                color: black;
+            }
+          }
+      }
+    }
+    @for $i from 1 through 9 {
+      .color-light-#{$key}-#{$i} {
+        background-color: mix(white, $value, $i * 10%);
+      }
+      .text-hover-#{$key}-#{$i} {
+        &:hover{
+            background-color: mix(rgb(242, 134, 10), $value, $i * 1%);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+$color-primary: #326dee;
+$color-secondary: #1ac888;
+$button-color: #0f3b0d;
+$button-text-color: #e0efdf;
+$button-color-function: #87bed3;
+
+$colors:( 
+"one": #326dee,
+"two": #FFDA33,
+"three": #1acfee,
+"four": #26B21A,
+"five": #FF3377,
+"six": #FF7433
+);
+
+//map-get  : to get color from one set of group of colors
+$h1-color : map-get($colors,"three");
+
+$font-size: 35px;
+$width: 12px;
+
+$border-radius: 12px;

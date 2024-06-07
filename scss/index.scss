@@ -1,0 +1,31 @@
+@use 'sass:math';
+@import "variables";
+@import "colors";
+
+/*To debug something*/
+@debug math.div(10, 3);
+@debug math.floor(10.2);
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: $h1-color;
+}
+.card{
+    width:$width;
+    height:300px;
+    max-width: 500px;
+    border-radius: math.div($border-radius, 4);
+}
+.card-title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: $color-primary;
+    font-size: $font-size;
+}
+h3{
+    color:$color-secondary;
+}
+
+span{
+    margin: 0 5px;
+    font-size: 30px;
+}
